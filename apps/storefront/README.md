@@ -47,21 +47,20 @@ components/
 
 ### Mudar número do WhatsApp
 
-Em `packages/config/index.ts`:
+No `.env.local` da raiz (e nas env vars da Vercel):
 
-```ts
-whatsapp: {
-  number: "5531996981425",  // formato: 55 + DDD + número
-  message: "Olá! Gostaria de fazer um pedido!",
-},
 ```
+NEXT_PUBLIC_WHATSAPP_NUMBER=5541996981425
+```
+
+Só dígitos (o `+55 (41) 99698-1425` também vale — os dígitos são extraídos).
 
 ### Mudar @ do Instagram
 
-Em `packages/config/index.ts`:
+No `.env.local` da raiz (e nas env vars da Vercel):
 
-```ts
-instagram: "https://instagram.com/patriciamourapersonalizados",
+```
+NEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/patriciamourapersonalizados
 ```
 
 ### Mudar nome do site

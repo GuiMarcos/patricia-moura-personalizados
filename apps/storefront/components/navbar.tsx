@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ShoppingCart, Instagram, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "./cart-provider";
@@ -16,8 +17,15 @@ export function Navbar() {
       <nav className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-primary-600">
-              {siteConfig.name}
+            <Link href="/" aria-label={siteConfig.name}>
+              <Image
+                src="/logo.jpg"
+                alt={siteConfig.name}
+                width={640}
+                height={418}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
 
             <div className="hidden md:flex md:items-center md:gap-8">

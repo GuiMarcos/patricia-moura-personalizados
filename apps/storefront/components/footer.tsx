@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@mkt-digital/config";
 import { Instagram } from "lucide-react";
 
@@ -6,7 +7,13 @@ export function Footer() {
     <footer className="border-t bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 text-center">
-          <p className="text-2xl font-bold text-primary-600">{siteConfig.name}</p>
+          <Image
+            src="/logo.jpg"
+            alt={siteConfig.name}
+            width={640}
+            height={418}
+            className="h-14 w-auto rounded-lg"
+          />
           <p className="text-gray-600">{siteConfig.description}</p>
           <a
             href={siteConfig.instagram}

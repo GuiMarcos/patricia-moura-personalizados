@@ -87,6 +87,8 @@ SANITY_STUDIO_DATASET=production
 NEXT_PUBLIC_SANITY_PROJECT_ID=seu_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
 NEXT_PUBLIC_SITE_URL=http://localhost:3002
+NEXT_PUBLIC_WHATSAPP_NUMBER=5541996981425
+NEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/patriciamourapersonalizados
 SANITY_TOKEN=seu_token
 ADMIN_PASSWORD=sua_senha_forte_do_painel_admin
 ```
@@ -109,6 +111,9 @@ apontando para o mesmo repositório mas com **Root Directory** diferente
    - `NEXT_PUBLIC_SANITY_PROJECT_ID` = seu project id
    - `NEXT_PUBLIC_SANITY_DATASET` = production
    - `NEXT_PUBLIC_SITE_URL` = URL do deploy daquele projeto
+     (loja: https://patricia-moura-personalizados-store.vercel.app)
+   - `NEXT_PUBLIC_WHATSAPP_NUMBER` = 5541996981425
+   - `NEXT_PUBLIC_INSTAGRAM_URL` = URL do Instagram
    - `SANITY_TOKEN` = token com permissão de escrita (upload de imagens + admin)
    - `ADMIN_PASSWORD` = senha forte do painel (**só precisa no projeto admin**, mas pode repetir)
 5. Deploy

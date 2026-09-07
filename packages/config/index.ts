@@ -1,11 +1,26 @@
+/** Só dígitos: aceita "+55 (41) 99698-1425" e cai no padrão se inválido. */
+function phoneDigits(value: string | undefined, fallback: string): string {
+  const digits = (value ?? "").replace(/\D/g, "");
+  return digits.length >= 10 ? digits : fallback;
+}
+
+const whatsappNumber = phoneDigits(
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER,
+  "5541996981425"
+);
+
+const instagramUrl =
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL?.trim() ||
+  "https://instagram.com/patriciamourapersonalizados";
+
 export const siteConfig = {
   name: "Patrícia Moura Personalizados",
   description: "Canecas, camisetas, chaveiros, garrafas e toalhas personalizados. Faça seu pedido pelo WhatsApp!",
   whatsapp: {
-    number: "5541996981425",
+    number: whatsappNumber,
     message: "Olá! Gostaria de fazer um pedido!",
   },
-  instagram: "https://instagram.com/patriciamourapersonalizados",
+  instagram: instagramUrl,
   categories: [
     { label: "Canecas", value: "caneca" as const },
     { label: "Camisetas", value: "camiseta" as const },
