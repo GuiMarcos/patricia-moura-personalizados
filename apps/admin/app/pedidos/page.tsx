@@ -1,9 +1,13 @@
 import { fetchOrders } from "@mkt-digital/sanity";
+import { AdvanceStatusButton } from "./advance-button";
 
 interface OrderItem {
   product: { name: string; price: number } | null;
   quantity: number;
   price: number;
+  variantName?: string;
+  customNote?: string;
+  artworkUrls?: string[];
 }
 
 interface Order {
@@ -48,22 +52,51 @@ export default async function OrdersPage() {
                       {new Date(order._createdAt).toLocaleDateString("pt-BR")}
                     </p>
                   </div>
-                  <span
-                    className={`rounded-full px-3 py-1 text-xs font-medium capitalize ${
-                      statusColors[order.status] || "bg-gray-100 text-gray-800"
-                    }`}
-                  >
-                    {order.status}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-medium capitalize ${
+                        statusColors[order.status] || "bg-gray-100 text-gray-800"
+                      }`}
+                    >
+                      {order.status}
+                    </span>
+                    <AdvanceStatusButton id={order._id} status={order.status} />
+                  </div>
                 </div>
 
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 space-y-3">
                   {order.items.map((item, i) => (
-                    <div key={i} className="flex justify-between text-sm">
-                      <span>
-                        {item.quantity}x {item.product?.name || "Produto removido"}
-                      </span>
-                      <span>R$ {(item.price * item.quantity).toFixed(2)}</span>
+                    <div key={i} className="text-sm">
+                      <div className="flex justify-between">
+                        <span>
+                          {item.quantity}x {item.product?.name || "Produto removido"}
+                          {item.variantName && (
+                            <span className="text-primary-700"> ({item.variantName})</span>
+                          )}
+                        </span>
+                        <span>R$ {(item.price * item.quantity).toFixed(2)}</span>
+                      </div>
+                      {item.customNote && (
+                        <p className="mt-1 text-xs text-gray-500">
+                          ✏️ {item.customNote}
+                        </p>
+                      )}
+                      {item.artworkUrls && item.artworkUrls.length > 0 && (
+                        <p className="mt-1 text-xs">
+                          🖼️{" "}
+                          {item.artworkUrls.map((url, j) => (
+                            <a
+                              key={j}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mr-2 text-primary-600 hover:underline"
+                            >
+                              ref {j + 1}
+                            </a>
+                          ))}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
