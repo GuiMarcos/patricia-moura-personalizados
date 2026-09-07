@@ -14,9 +14,9 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
 
   return (
-    <div className="group rounded-2xl border bg-white shadow-sm overflow-hidden hover:shadow-md transition">
+    <div className="group rounded-2xl border border-primary-100 bg-white shadow-sm overflow-hidden hover:shadow-md transition">
       <Link href={`/produtos/${product.slug}`}>
-        <div className="relative aspect-square bg-gray-100">
+        <div className="relative aspect-square bg-primary-50">
           {product.images[0] ? (
             <Image
               src={product.images[0].url}
@@ -25,7 +25,7 @@ export function ProductCard({ product }: ProductCardProps) {
               className="object-cover group-hover:scale-105 transition duration-300"
             />
           ) : (
-            <div className="flex h-full items-center justify-center text-gray-400">
+            <div className="flex h-full items-center justify-center text-cocoa-light">
               Sem imagem
             </div>
           )}
@@ -39,10 +39,10 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="p-4">
         <Link href={`/produtos/${product.slug}`}>
-          <h3 className="font-semibold text-gray-900 hover:text-primary-600 transition">
+          <h3 className="font-semibold text-cocoa-dark hover:text-primary-600 transition">
             {product.name}
           </h3>
-          <p className="mt-1 text-sm text-gray-500 capitalize">{product.category}</p>
+          <p className="mt-1 text-sm text-cocoa-light capitalize">{product.category}</p>
         </Link>
 
         <div className="mt-3 flex items-center justify-between">
@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
               R$ {product.price.toFixed(2)}
             </p>
             {product.variants && product.variants.length > 0 && (
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-cocoa-light">
                 {product.variants.length} opções a partir desse valor
               </p>
             )}

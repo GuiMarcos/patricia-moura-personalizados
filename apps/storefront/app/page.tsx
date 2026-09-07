@@ -15,16 +15,18 @@ export default async function HomePage() {
       <HeroSection />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Produtos em Destaque</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-primary-500">Produtos em Destaque</h2>
         <ProductGrid products={featured.length > 0 ? featured : products.slice(0, 4)} />
       </section>
 
       <InstagramBanner />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-8">Todos os Produtos</h2>
-        <CategoryFilter />
-        <ProductGrid products={products} />
+      <section className="bg-primary-50">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-8 text-primary-500">Todos os Produtos</h2>
+          <CategoryFilter />
+          <ProductGrid products={products} />
+        </div>
       </section>
     </div>
   );

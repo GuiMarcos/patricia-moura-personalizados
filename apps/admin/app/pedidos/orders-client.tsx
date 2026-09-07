@@ -184,7 +184,7 @@ export function OrdersClient({ orders }: { orders: Order[] }) {
               </div>
 
               {order.customerNote && (
-                <div className="mt-4 rounded-lg bg-gray-50 p-3">
+                <div className="mt-4 rounded-lg bg-primary-50 p-3">
                   <p className="text-sm text-gray-600">
                     <strong>Observação:</strong> {order.customerNote}
                   </p>

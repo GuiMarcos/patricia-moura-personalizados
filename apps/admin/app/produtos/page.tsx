@@ -19,7 +19,7 @@ export default async function ProductsPage() {
   const products = await fetchProducts();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-cream">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -50,7 +50,7 @@ export default async function ProductsPage() {
         ) : (
           <div className="overflow-hidden rounded-xl border bg-white shadow-sm">
             <table className="w-full text-left text-sm">
-              <thead className="border-b bg-gray-50 text-xs uppercase text-gray-500">
+              <thead className="border-b bg-primary-50 text-xs uppercase text-gray-500">
                 <tr>
                   <th className="px-4 py-3">Produto</th>
                   <th className="px-4 py-3">Categoria</th>
@@ -61,7 +61,7 @@ export default async function ProductsPage() {
               </thead>
               <tbody>
                 {products.map((p) => (
-                  <tr key={p._id} className="border-b last:border-0 hover:bg-gray-50">
+                  <tr key={p._id} className="border-b last:border-0 hover:bg-primary-50">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         {p.thumbUrl ? (

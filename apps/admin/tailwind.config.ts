@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+/** Mesma identidade do storefront: rosa #C9787D sobre fundo creme. */
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,17 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: "#fdf4ff",
-          100: "#fae8ff",
-          200: "#f5d0fe",
-          300: "#f0abfc",
-          400: "#e879f9",
-          500: "#d946ef",
-          600: "#c026d3",
-          700: "#a21caf",
-          800: "#86198f",
-          900: "#701a75",
+          50: "#FDF0F1",
+          100: "#F9E1E4",
+          200: "#F6D9DC",
+          300: "#EFB7BD",
+          400: "#DD94A0",
+          500: "#C9787D",
+          600: "#B9656B",
+          700: "#9E545A",
+          800: "#7C454B",
+          900: "#5D363B",
         },
+        cream: "#FFFCFA",
       },
     },
   },

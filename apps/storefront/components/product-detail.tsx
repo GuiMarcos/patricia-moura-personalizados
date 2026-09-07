@@ -86,7 +86,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="space-y-4">
           {product.images[0] && (
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-100">
+            <div className="relative aspect-square overflow-hidden rounded-2xl bg-primary-50">
               <Image
                 src={product.images[0].url}
                 alt={product.images[0].alt || product.name}
@@ -102,7 +102,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               {product.images.map((img, i) => (
                 <div
                   key={i}
-                  className="relative aspect-square overflow-hidden rounded-lg bg-gray-100"
+                  className="relative aspect-square overflow-hidden rounded-lg bg-primary-50"
                 >
                   <Image
                     src={img.url}
@@ -121,13 +121,13 @@ export function ProductDetail({ product }: ProductDetailProps) {
             {product.category}
           </span>
 
-          <h1 className="mt-2 text-3xl font-bold text-gray-900">{product.name}</h1>
+          <h1 className="mt-2 text-3xl font-bold text-primary-500">{product.name}</h1>
 
-          <p className="mt-4 text-gray-600">{product.description}</p>
+          <p className="mt-4 text-cocoa">{product.description}</p>
 
           {variants.length > 0 && (
             <div className="mt-4">
-              <span className="mb-2 block text-sm font-semibold text-gray-800">
+              <span className="mb-2 block text-sm font-semibold text-cocoa">
                 Escolha a variação:
               </span>
               <div className="flex flex-wrap gap-2">
@@ -142,7 +142,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                       className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                         active
                           ? "border-primary-600 bg-primary-600 text-white"
-                          : "border-gray-300 bg-white text-gray-700 hover:border-primary-400 hover:text-primary-700"
+                          : "border-primary-200 bg-white text-cocoa hover:border-primary-400 hover:text-primary-600"
                       }`}
                     >
                       {v.name} · R$ {v.price.toFixed(2)}
@@ -166,7 +166,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               <div>
                 <label
                   htmlFor="custom-note"
-                  className="mb-1 block text-sm font-semibold text-gray-800"
+                  className="mb-1 block text-sm font-semibold text-cocoa"
                 >
                   O que você quer que seja feito?
                 </label>
@@ -177,12 +177,12 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   rows={3}
                   maxLength={1000}
                   placeholder='Ex: "Quero a foto do meu filho com o nome Enzo e fundo azul"'
-                  className="w-full resize-y rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800 placeholder:text-gray-400 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                  className="w-full resize-y rounded-lg border border-primary-200 bg-white px-3 py-2 text-sm text-cocoa placeholder:text-cocoa-light focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
                 />
               </div>
 
               <div>
-                <span className="mb-1 block text-sm font-semibold text-gray-800">
+                <span className="mb-1 block text-sm font-semibold text-cocoa">
                   Imagens de referência ({images.length}/{MAX_IMAGES})
                 </span>
                 <input
@@ -196,12 +196,12 @@ export function ProductDetail({ product }: ProductDetailProps) {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm font-medium text-gray-700 hover:border-primary-400 hover:text-primary-700 transition"
+                  className="flex w-full items-center justify-center gap-2 rounded-lg border border-primary-200 bg-white px-3 py-2.5 text-sm font-medium text-cocoa hover:border-primary-400 hover:text-primary-600 transition"
                 >
                   <Upload className="h-4 w-4" />
                   Anexar imagens
                 </button>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-cocoa-light">
                   PNG, JPG ou WEBP de até 8MB cada.
                 </p>
 
@@ -214,7 +214,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                     {images.map((img) => (
                       <div
                         key={img.previewUrl}
-                        className="group relative aspect-square overflow-hidden rounded-lg bg-gray-100"
+                        className="group relative aspect-square overflow-hidden rounded-lg bg-primary-50"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img

@@ -15,7 +15,7 @@ export function CategoryFilter() {
         <a
           key={cat.value}
           href={`/produtos?categoria=${cat.value}`}
-          className="rounded-full border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 hover:border-primary-600 hover:text-primary-600 transition"
+          className="rounded-full border border-primary-200 bg-white px-6 py-2 text-sm font-medium text-cocoa hover:border-primary-500 hover:text-primary-600 transition"
         >
           {cat.label}
         </a>

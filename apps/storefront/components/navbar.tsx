@@ -14,7 +14,7 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur-md">
+      <nav className="sticky top-0 z-40 border-b border-primary-100 bg-cream/80 backdrop-blur-md">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Link href="/" aria-label={siteConfig.name}>
@@ -29,23 +29,23 @@ export function Navbar() {
             </Link>
 
             <div className="hidden md:flex md:items-center md:gap-8">
-              <Link href="/" className="text-gray-700 hover:text-primary-600 transition">
+              <Link href="/" className="text-cocoa hover:text-primary-600 transition">
                 Início
               </Link>
-              <Link href="/produtos" className="text-gray-700 hover:text-primary-600 transition">
+              <Link href="/produtos" className="text-cocoa hover:text-primary-600 transition">
                 Produtos
               </Link>
               <a
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-primary-600 transition"
+                className="text-cocoa hover:text-primary-600 transition"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <button
                 onClick={() => setIsOpen(true)}
-                className="relative text-gray-700 hover:text-primary-600 transition"
+                className="relative text-cocoa hover:text-primary-600 transition"
               >
                 <ShoppingCart className="h-5 w-5" />
                 {itemCount > 0 && (
@@ -59,7 +59,7 @@ export function Navbar() {
             <div className="flex items-center gap-4 md:hidden">
               <button
                 onClick={() => setIsOpen(true)}
-                className="relative text-gray-700"
+                className="relative text-cocoa"
               >
                 <ShoppingCart className="h-5 w-5" />
                 {itemCount > 0 && (
@@ -70,7 +70,7 @@ export function Navbar() {
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-700"
+                className="text-cocoa"
               >
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -79,19 +79,19 @@ export function Navbar() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="border-t md:hidden">
+          <div className="border-t border-primary-100 md:hidden">
             <div className="flex flex-col gap-4 px-4 py-4">
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-primary-600"
+                className="text-cocoa hover:text-primary-600"
               >
                 Início
               </Link>
               <Link
                 href="/produtos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-primary-600"
+                className="text-cocoa hover:text-primary-600"
               >
                 Produtos
               </Link>
@@ -99,7 +99,7 @@ export function Navbar() {
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-primary-600"
+                className="text-cocoa hover:text-primary-600"
               >
                 Instagram
               </a>

@@ -108,7 +108,7 @@ export function CartSidebar() {
             <h2 className="text-lg font-semibold">Carrinho</h2>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-cocoa-light hover:text-cocoa"
             >
               <X className="h-5 w-5" />
             </button>
@@ -116,7 +116,7 @@ export function CartSidebar() {
 
           <div className="flex-1 overflow-y-auto px-4 py-4">
             {items.length === 0 ? (
-              <p className="text-center text-gray-500 py-12">
+              <p className="text-center text-cocoa-light py-12">
                 Seu carrinho está vazio
               </p>
             ) : (
@@ -126,7 +126,7 @@ export function CartSidebar() {
                     key={item.id}
                     className="flex gap-4 rounded-lg border p-3"
                   >
-                    <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                    <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-primary-50">
                       {item.product.images[0] ? (
                         <Image
                           src={item.product.images[0].url}
@@ -135,7 +135,7 @@ export function CartSidebar() {
                           className="object-cover"
                         />
                       ) : (
-                        <div className="flex h-full items-center justify-center text-xs text-gray-400">
+                        <div className="flex h-full items-center justify-center text-xs text-cocoa-light">
                           Img
                         </div>
                       )}
@@ -149,7 +149,7 @@ export function CartSidebar() {
                             {item.variant.name}
                           </p>
                         )}
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-cocoa-light">
                           R$ {unitPrice(item).toFixed(2)}
                         </p>
                       </div>
@@ -157,7 +157,7 @@ export function CartSidebar() {
                       {item.customization && (
                         <div className="rounded-md bg-primary-50 p-2">
                           {item.customization.note && (
-                            <p className="text-xs text-gray-700">
+                            <p className="text-xs text-cocoa">
                               <span className="font-semibold">✏️ Ideia: </span>
                               {item.customization.note}
                             </p>
@@ -185,7 +185,7 @@ export function CartSidebar() {
                             onClick={() =>
                               updateQuantity(item.id, item.quantity - 1)
                             }
-                            className="rounded-full border p-1 hover:bg-gray-100"
+                            className="rounded-full border border-primary-100 p-1 hover:bg-primary-50"
                           >
                             <Minus className="h-3 w-3" />
                           </button>
@@ -196,7 +196,7 @@ export function CartSidebar() {
                             onClick={() =>
                               updateQuantity(item.id, item.quantity + 1)
                             }
-                            className="rounded-full border p-1 hover:bg-gray-100"
+                            className="rounded-full border border-primary-100 p-1 hover:bg-primary-50"
                           >
                             <Plus className="h-3 w-3" />
                           </button>
@@ -249,7 +249,7 @@ export function CartSidebar() {
 
               <button
                 onClick={clearCart}
-                className="block w-full text-center text-sm text-gray-500 hover:text-gray-700"
+                className="block w-full text-center text-sm text-cocoa-light hover:text-cocoa"
               >
                 Limpar carrinho
               </button>

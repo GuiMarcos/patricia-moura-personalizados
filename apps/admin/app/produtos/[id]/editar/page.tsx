@@ -37,7 +37,7 @@ export default async function EditProductPage({ params }: Props) {
   if (!product) notFound();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-cream">
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
         <Link href="/produtos" className="text-sm text-primary-600 hover:underline">
           ← Voltar para produtos
