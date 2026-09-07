@@ -54,4 +54,4 @@ SANITY_TOKEN=seu_token
 pnpm studio:deploy
 ```
 
-Sobe o Studio em `https://seu-app.sanity.studio`
+Sobe o Studio em `https://patricia-moura-personalizados.sanity.studio`
