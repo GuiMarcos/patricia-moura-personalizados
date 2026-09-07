@@ -1,6 +1,6 @@
 "use client";
 
-import { siteConfig } from "@mkt-digital/config";
+import { siteConfig } from "@patricia-moura-personalizados/config";
 
 export function CategoryFilter() {
   return (

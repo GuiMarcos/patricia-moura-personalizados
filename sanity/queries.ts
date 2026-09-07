@@ -1,5 +1,5 @@
 import { client, isSanityConfigured } from "./client";
-import type { Product } from "@mkt-digital/types";
+import type { Product } from "@patricia-moura-personalizados/types";
 
 export const allProductsQuery = `*[_type == "product"] | order(_createdAt desc) {
   _id,

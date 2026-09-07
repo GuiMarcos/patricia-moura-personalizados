@@ -1,5 +1,5 @@
 {
-  "name": "mkt-digital",
+  "name": "patricia-moura-personalizados",
   "private": true,
   "scripts": {
     "dev": "node scripts/with-env.js turbo dev",

@@ -3,9 +3,9 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { ShoppingCart, Upload, X } from "lucide-react";
-import type { Product, CustomizationImage } from "@mkt-digital/types";
+import type { Product, CustomizationImage } from "@patricia-moura-personalizados/types";
 import { useCart } from "./cart-provider";
-import { siteConfig } from "@mkt-digital/config";
+import { siteConfig } from "@patricia-moura-personalizados/config";
 
 const MAX_IMAGES = 6;
 const MAX_SIZE_BYTES = 8 * 1024 * 1024; // 8MB

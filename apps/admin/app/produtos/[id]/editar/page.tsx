@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getWriteClient } from "@mkt-digital/sanity/server";
+import { getWriteClient } from "@patricia-moura-personalizados/sanity/server";
 import type { AdminProduct } from "@/app/lib/products";
 import { ProductForm } from "../../product-form";
 

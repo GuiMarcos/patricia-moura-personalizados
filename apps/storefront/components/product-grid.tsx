@@ -1,4 +1,4 @@
-import type { Product } from "@mkt-digital/types";
+import type { Product } from "@patricia-moura-personalizados/types";
 import { ProductCard } from "./product-card";
 
 interface ProductGridProps {

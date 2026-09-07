@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { siteConfig } from "@mkt-digital/config";
+import { siteConfig } from "@patricia-moura-personalizados/config";
 import { Instagram } from "lucide-react";
 
 export function Footer() {

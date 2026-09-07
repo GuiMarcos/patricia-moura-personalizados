@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ShoppingCart, Instagram, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "./cart-provider";
-import { siteConfig } from "@mkt-digital/config";
+import { siteConfig } from "@patricia-moura-personalizados/config";
 import { CartSidebar } from "./cart-sidebar";
 
 export function Navbar() {

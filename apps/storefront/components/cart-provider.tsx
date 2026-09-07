@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
-import type { Product, CartItem, Customization, ProductVariant } from "@mkt-digital/types";
-import { unitPrice } from "@mkt-digital/types";
+import type { Product, CartItem, Customization, ProductVariant } from "@patricia-moura-personalizados/types";
+import { unitPrice } from "@patricia-moura-personalizados/types";
 
 interface CartContextType {
   items: CartItem[];

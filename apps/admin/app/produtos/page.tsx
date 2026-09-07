@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Pencil, Plus } from "lucide-react";
-import { getWriteClient } from "@mkt-digital/sanity/server";
+import { getWriteClient } from "@patricia-moura-personalizados/sanity/server";
 import { ADMIN_LIST_QUERY } from "@/app/api/products/validate";
 import { categoryLabel, type AdminProduct } from "@/app/lib/products";
 import { DeleteButton } from "./delete-button";

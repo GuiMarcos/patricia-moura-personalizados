@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
-import type { Product } from "@mkt-digital/types";
+import type { Product } from "@patricia-moura-personalizados/types";
 import { useCart } from "./cart-provider";
 
 interface ProductCardProps {

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getWriteClient } from "@mkt-digital/sanity/server";
+import { getWriteClient } from "@patricia-moura-personalizados/sanity/server";
 
 export const runtime = "nodejs";
 

@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { X, Minus, Plus, Trash2, Loader2 } from "lucide-react";
 import { useCart } from "./cart-provider";
-import { generateWhatsAppLink, type WhatsAppOrderItem } from "@mkt-digital/config";
-import { unitPrice } from "@mkt-digital/types";
+import { generateWhatsAppLink, type WhatsAppOrderItem } from "@patricia-moura-personalizados/config";
+import { unitPrice } from "@patricia-moura-personalizados/types";
 
 interface UploadedFile {
   name: string;

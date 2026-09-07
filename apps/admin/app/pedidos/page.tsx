@@ -1,4 +1,4 @@
-import { fetchOrders } from "@mkt-digital/sanity";
+import { fetchOrders } from "@patricia-moura-personalizados/sanity";
 import { AdvanceStatusButton } from "./advance-button";
 
 interface OrderItem {

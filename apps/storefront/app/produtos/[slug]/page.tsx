@@ -1,4 +1,4 @@
-import { fetchProductBySlug } from "@mkt-digital/sanity";
+import { fetchProductBySlug } from "@patricia-moura-personalizados/sanity";
 import { notFound } from "next/navigation";
 import { ProductDetail } from "@/components/product-detail";
 

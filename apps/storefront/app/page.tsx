@@ -1,4 +1,4 @@
-import { fetchProducts, fetchFeaturedProducts } from "@mkt-digital/sanity";
+import { fetchProducts, fetchFeaturedProducts } from "@patricia-moura-personalizados/sanity";
 import { HeroSection } from "@/components/hero-section";
 import { ProductGrid } from "@/components/product-grid";
 import { CategoryFilter } from "@/components/category-filter";

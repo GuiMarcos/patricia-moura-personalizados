@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import {
   uploadReferenceImages,
   UploadValidationError,
-} from "@mkt-digital/sanity/server";
+} from "@patricia-moura-personalizados/sanity/server";
 
 export const runtime = "nodejs";
 

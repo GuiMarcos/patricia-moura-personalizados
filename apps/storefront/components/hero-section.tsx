@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { siteConfig } from "@mkt-digital/config";
+import { siteConfig } from "@patricia-moura-personalizados/config";
 
 export function HeroSection() {
   return (

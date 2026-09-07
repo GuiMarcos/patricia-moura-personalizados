@@ -1,5 +1,5 @@
 {
-  "name": "@mkt-digital/storefront",
+  "name": "@patricia-moura-personalizados/storefront",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mkt-digital/types": "workspace:*",
-    "@mkt-digital/config": "workspace:*",
-    "@mkt-digital/sanity": "workspace:*",
+    "@patricia-moura-personalizados/types": "workspace:*",
+    "@patricia-moura-personalizados/config": "workspace:*",
+    "@patricia-moura-personalizados/sanity": "workspace:*",
     "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

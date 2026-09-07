@@ -5,7 +5,7 @@ Catálogo online de produtos personalizados com checkout via WhatsApp.
 ## Estrutura do Projeto
 
 ```
-mkt-digital/
+patricia-moura-personalizados/
 ├── apps/
 │   ├── storefront/          # Site público (port 3002)
 │   └── admin/               # Painel admin (port 3001)

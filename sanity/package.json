@@ -1,5 +1,5 @@
 {
-  "name": "@mkt-digital/sanity",
+  "name": "@patricia-moura-personalizados/sanity",
   "version": "0.1.0",
   "private": true,
   "main": "./index.ts",
@@ -14,7 +14,7 @@
     "seed": "npx tsx seed.ts"
   },
   "dependencies": {
-    "@mkt-digital/types": "workspace:*",
+    "@patricia-moura-personalizados/types": "workspace:*",
     "@sanity/image-url": "^1.1.0",
     "next-sanity": "^9.8.0",
     "sanity": "^3.70.0",

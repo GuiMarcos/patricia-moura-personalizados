@@ -1,5 +1,5 @@
 import { Instagram } from "lucide-react";
-import { siteConfig } from "@mkt-digital/config";
+import { siteConfig } from "@patricia-moura-personalizados/config";
 
 export function InstagramBanner() {
   return (
