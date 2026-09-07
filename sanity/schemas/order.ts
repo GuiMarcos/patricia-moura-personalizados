@@ -1,0 +1,69 @@
+import { defineType, defineField } from "sanity";
+
+export const orderSchema = defineType({
+  name: "order",
+  title: "Pedido",
+  type: "document",
+  fields: [
+    defineField({
+      name: "items",
+      title: "Itens",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "product",
+              title: "Produto",
+              type: "reference",
+              to: [{ type: "product" }],
+            }),
+            defineField({
+              name: "quantity",
+              title: "Quantidade",
+              type: "number",
+              validation: (rule) => rule.min(1),
+            }),
+            defineField({
+              name: "price",
+              title: "Preço",
+              type: "number",
+            }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "total",
+      title: "Total",
+      type: "number",
+    }),
+    defineField({
+      name: "status",
+      title: "Status",
+      type: "string",
+      options: {
+        list: [
+          { title: "Pendente", value: "pendente" },
+          { title: "Confirmado", value: "confirmado" },
+          { title: "Enviado", value: "enviado" },
+          { title: "Entregue", value: "entregue" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "pendente",
+    }),
+    defineField({
+      name: "customerNote",
+      title: "Observação do Cliente",
+      type: "text",
+    }),
+  ],
+  preview: {
+    select: {
+      title: "_id",
+      subtitle: "status",
+    },
+  },
+});

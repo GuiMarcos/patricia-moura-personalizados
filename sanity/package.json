@@ -1,0 +1,28 @@
+{
+  "name": "@mkt-digital/sanity",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./client": "./client.ts",
+    "./queries": "./queries.ts",
+    "./server": "./server.ts"
+  },
+  "scripts": {
+    "seed": "npx tsx seed.ts"
+  },
+  "dependencies": {
+    "@mkt-digital/types": "workspace:*",
+    "@sanity/image-url": "^1.1.0",
+    "next-sanity": "^9.8.0",
+    "sanity": "^3.70.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.0",
+    "sanity": "^3.70.0",
+    "tsx": "^4.19.0"
+  }
+}
