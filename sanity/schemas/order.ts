@@ -67,6 +67,7 @@ export const orderSchema = defineType({
           { title: "Confirmado", value: "confirmado" },
           { title: "Enviado", value: "enviado" },
           { title: "Entregue", value: "entregue" },
+          { title: "Cancelado", value: "cancelado" },
         ],
         layout: "radio",
       },

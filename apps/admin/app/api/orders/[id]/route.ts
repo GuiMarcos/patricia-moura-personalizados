@@ -3,7 +3,7 @@ import { getWriteClient } from "@patricia-moura-personalizados/sanity/server";
 
 export const runtime = "nodejs";
 
-const STATUSES = ["pendente", "confirmado", "enviado", "entregue"] as const;
+const STATUSES = ["pendente", "confirmado", "enviado", "entregue", "cancelado"] as const;
 
 interface Ctx {
   params: Promise<{ id: string }>;
