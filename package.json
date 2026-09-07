@@ -1,0 +1,22 @@
+{
+  "name": "mkt-digital",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/with-env.js turbo dev",
+    "build": "node scripts/with-env.js --env prod turbo build",
+    "lint": "turbo lint",
+    "clean": "turbo clean",
+    "studio": "node scripts/with-env.js --dir sanity -- npx sanity dev",
+    "studio:deploy": "node scripts/with-env.js --env prod --dir sanity -- npx sanity deploy",
+    "seed": "node scripts/with-env.js --dir sanity -- npx tsx seed.ts",
+    "seed:fresh": "node scripts/with-env.js --dir sanity -- npx tsx seed.ts --fresh",
+    "seed:prod": "node scripts/with-env.js --env prod --dir sanity -- npx tsx seed.ts",
+    "seed:prod:fresh": "node scripts/with-env.js --env prod --dir sanity -- npx tsx seed.ts --fresh"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.0",
+    "turbo": "^2.4.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

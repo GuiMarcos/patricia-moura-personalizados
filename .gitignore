@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+.next/
+out/
+dist/
+.turbo/
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.pem
+images/
+.env
+.env.local
+.env.prod
+.env.*.local
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# vercel
+.vercel
+
+# sanity
+.sanity/
