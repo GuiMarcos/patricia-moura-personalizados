@@ -1,7 +1,12 @@
 import { createClient, type SanityClient } from "next-sanity";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+const projectId =
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ||
+  process.env.SANITY_STUDIO_PROJECT_ID;
+const dataset =
+  process.env.NEXT_PUBLIC_SANITY_DATASET ||
+  process.env.SANITY_STUDIO_DATASET ||
+  "production";
 
 export const isSanityConfigured = !!projectId && projectId !== "seu_project_id";
 
@@ -13,7 +18,7 @@ export function getClient(): SanityClient {
       projectId: projectId!,
       dataset,
       apiVersion: "2025-01-01",
-      useCdn: true,
+      useCdn: false,
     });
   }
   return _client;
@@ -21,7 +26,12 @@ export function getClient(): SanityClient {
 
 export const client = {
   fetch: <T>(query: string, params?: Record<string, unknown>): Promise<T> => {
-    if (!isSanityConfigured) return Promise.resolve([] as T);
+    if (!isSanityConfigured) {
+      console.error(
+        "[sanity] Projeto não configurado. Verifique NEXT_PUBLIC_SANITY_PROJECT_ID ou SANITY_STUDIO_PROJECT_ID."
+      );
+      return Promise.resolve([] as T);
+    }
     return getClient().fetch(query, params);
   },
 };

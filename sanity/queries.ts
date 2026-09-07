@@ -169,6 +169,9 @@ export async function fetchProductsByCategory(category: string): Promise<Product
 }
 
 export async function fetchOrders(): Promise<unknown[]> {
-  if (!isSanityConfigured) return [];
+  if (!isSanityConfigured) {
+    console.error("[sanity] fetchOrders: Sanity não configurado, retornando [].");
+    return [];
+  }
   return client.fetch(allOrdersQuery);
 }
