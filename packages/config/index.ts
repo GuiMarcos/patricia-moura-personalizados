@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Patrícia Moura Personalizados",
   description: "Canecas, camisetas, chaveiros, garrafas e toalhas personalizados. Faça seu pedido pelo WhatsApp!",
   whatsapp: {
-    number: "5531996981425",
+    number: "5541996981425",
     message: "Olá! Gostaria de fazer um pedido!",
   },
   instagram: "https://instagram.com/patriciamourapersonalizados",
