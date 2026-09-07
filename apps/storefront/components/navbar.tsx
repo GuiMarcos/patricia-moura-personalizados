@@ -19,10 +19,10 @@ export function Navbar() {
           <div className="flex h-16 items-center justify-between">
             <Link href="/" aria-label={siteConfig.name}>
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt={siteConfig.name}
                 width={640}
-                height={418}
+                height={320}
                 className="h-10 w-auto"
                 priority
               />

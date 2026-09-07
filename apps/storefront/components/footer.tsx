@@ -8,10 +8,10 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 text-center">
           <Image
-            src="/logo.jpg"
+            src="/logo.png"
             alt={siteConfig.name}
             width={640}
-            height={418}
+            height={320}
             className="h-14 w-auto rounded-lg"
           />
           <p className="text-cocoa">{siteConfig.description}</p>
