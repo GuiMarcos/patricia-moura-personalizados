@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { LogoutButton } from "./logout-button";
 
 export default function AdminPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-8">Painel Administrativo</h1>
+        <div className="mb-8 flex items-center justify-between">
+          <h1 className="text-3xl font-bold">Painel Administrativo</h1>
+          <LogoutButton />
+        </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Link

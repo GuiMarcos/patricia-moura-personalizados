@@ -4,6 +4,7 @@ import { getWriteClient } from "@mkt-digital/sanity/server";
 import { ADMIN_LIST_QUERY } from "@/app/api/products/validate";
 import { categoryLabel, type AdminProduct } from "@/app/lib/products";
 import { DeleteButton } from "./delete-button";
+import { LogoutButton } from "../logout-button";
 
 async function fetchProducts(): Promise<AdminProduct[]> {
   try {
@@ -30,13 +31,16 @@ export default async function ProductsPage() {
               {products.length} produto(s) cadastrado(s)
             </p>
           </div>
-          <Link
-            href="/produtos/novo"
-            className="flex items-center gap-2 rounded-full bg-primary-600 px-5 py-2.5 font-semibold text-white hover:bg-primary-700 transition"
-          >
-            <Plus className="h-4 w-4" />
-            Novo produto
-          </Link>
+          <div className="flex items-center gap-3">
+            <LogoutButton />
+            <Link
+              href="/produtos/novo"
+              className="flex items-center gap-2 rounded-full bg-primary-600 px-5 py-2.5 font-semibold text-white hover:bg-primary-700 transition"
+            >
+              <Plus className="h-4 w-4" />
+              Novo produto
+            </Link>
+          </div>
         </div>
 
         {products.length === 0 ? (
