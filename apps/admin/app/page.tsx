@@ -28,13 +28,13 @@ export default function AdminPage() {
           </Link>
 
           <a
-            href="https://sanity.io/manage"
+            href={process.env.NEXT_PUBLIC_STUDIO_URL || "http://localhost:3333"}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl border bg-white p-6 shadow-sm hover:shadow-md transition"
           >
             <h2 className="text-xl font-semibold">Sanity Studio</h2>
-            <p className="mt-2 text-gray-500">Abrir o Sanity Studio local</p>
+            <p className="mt-2 text-gray-500">Abrir o Studio de conteúdo</p>
           </a>
         </div>
       </div>
