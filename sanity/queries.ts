@@ -85,7 +85,10 @@ export const allOrdersQuery = `*[_type == "order"] | order(_createdAt desc) {
       price
     },
     quantity,
-    price
+    price,
+    variantName,
+    customNote,
+    artworkUrls
   },
   total,
   status,
