@@ -55,7 +55,35 @@ export function CartSidebar() {
         artworkUrls: artworkByItem.get(item.id),
       }));
 
-      window.open(generateWhatsAppLink(orderItems), "_blank", "noopener");
+      // Registra o pedido no Sanity antes de abrir o WhatsApp.
+      // Se falhar, o checkout continua — o pedido só não terá número.
+      let orderNumber: string | undefined;
+      try {
+        const res = await fetch("/api/orders", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            items: items.map((item) => ({
+              productId: item.product._id,
+              quantity: item.quantity,
+              price: unitPrice(item),
+              variantName: item.variant?.name,
+              customNote: item.customization?.note || undefined,
+              artworkUrls: artworkByItem.get(item.id),
+            })),
+          }),
+        });
+        const data = await res.json().catch(() => null);
+        if (res.ok && data?.number) {
+          orderNumber = data.number as string;
+        } else {
+          console.warn("Pedido não registrado:", data?.error);
+        }
+      } catch (err) {
+        console.warn("Pedido não registrado:", err);
+      }
+
+      window.open(generateWhatsAppLink(orderItems, undefined, orderNumber), "_blank", "noopener");
     } catch (err) {
       setCheckoutError(
         err instanceof Error ? err.message : "Não foi possível finalizar. Tente de novo."

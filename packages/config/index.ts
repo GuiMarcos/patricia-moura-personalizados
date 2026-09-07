@@ -42,7 +42,8 @@ export interface WhatsAppOrderItem {
 
 export function generateWhatsAppLink(
   items: WhatsAppOrderItem[],
-  phone: string = siteConfig.whatsapp.number
+  phone: string = siteConfig.whatsapp.number,
+  orderNumber?: string
 ): string {
   const lines = items.map((item) => {
     const base = `${item.quantity}x ${item.name} - R$ ${(item.price * item.quantity).toFixed(2)}`;
@@ -61,7 +62,8 @@ export function generateWhatsAppLink(
     0
   );
 
-  const text = `${siteConfig.whatsapp.message}\n\n📦 *Pedido:*\n${lines.join("\n")}\n\n💰 *Total: R$ ${total.toFixed(2)}*`;
+  const header = orderNumber ? `🧾 *Pedido #${orderNumber}:*` : `📦 *Pedido:*`;
+  const text = `${siteConfig.whatsapp.message}\n\n${header}\n${lines.join("\n")}\n\n💰 *Total: R$ ${total.toFixed(2)}*`;
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 }
