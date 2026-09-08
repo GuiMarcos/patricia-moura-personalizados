@@ -81,6 +81,7 @@ export const allOrdersQuery = `*[_type == "order"] | order(_createdAt desc) {
   _id,
   items[] {
     product-> {
+      _id,
       name,
       price
     },
@@ -93,8 +94,43 @@ export const allOrdersQuery = `*[_type == "order"] | order(_createdAt desc) {
   total,
   status,
   customerNote,
+  customerName,
+  customerPhone,
+  customerAddress,
+  discountType,
+  discountValue,
   _createdAt
 }`;
+
+export const orderByIdQuery = `*[_type == "order" && _id == $id][0] {
+  _id,
+  items[] {
+    product-> {
+      _id,
+      name,
+      price
+    },
+    quantity,
+    price,
+    variantName,
+    customNote,
+    artworkUrls
+  },
+  total,
+  status,
+  customerNote,
+  customerName,
+  customerPhone,
+  customerAddress,
+  discountType,
+  discountValue,
+  _createdAt
+}`;
+
+export async function fetchOrderById(id: string): Promise<unknown | null> {
+  if (!isSanityConfigured) return null;
+  return client.fetch(orderByIdQuery, { id });
+}
 
 // Demo data for when Sanity is not configured
 const demoProducts: Product[] = [

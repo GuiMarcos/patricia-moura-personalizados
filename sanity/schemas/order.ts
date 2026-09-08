@@ -78,6 +78,42 @@ export const orderSchema = defineType({
       title: "Observação do Cliente",
       type: "text",
     }),
+    defineField({
+      name: "customerName",
+      title: "Nome do Cliente",
+      type: "string",
+    }),
+    defineField({
+      name: "customerPhone",
+      title: "Telefone do Cliente",
+      type: "string",
+    }),
+    defineField({
+      name: "customerAddress",
+      title: "Endereço de Entrega",
+      type: "text",
+    }),
+    defineField({
+      name: "discountType",
+      title: "Tipo de Desconto",
+      type: "string",
+      options: {
+        list: [
+          { title: "Sem desconto", value: "none" },
+          { title: "Valor fixo (R$)", value: "fixed" },
+          { title: "Percentual (%)", value: "percent" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "none",
+    }),
+    defineField({
+      name: "discountValue",
+      title: "Valor do Desconto",
+      description: "Em R$ se fixo, em % se percentual.",
+      type: "number",
+      initialValue: 0,
+    }),
   ],
   preview: {
     select: {
