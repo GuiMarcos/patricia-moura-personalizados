@@ -15,7 +15,7 @@ export function HeroSection() {
             Canecas, camisetas, chaveiros e muito mais personalizados com carinho.
             Faça seu pedido pelo WhatsApp!
           </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/produtos"
               className="rounded-full bg-white px-8 py-3 font-semibold text-primary-700 shadow-lg hover:bg-primary-50 transition"

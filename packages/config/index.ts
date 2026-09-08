@@ -52,7 +52,7 @@ export function generateWhatsAppLink(
       extras.push(`   ✏️ Personalização: ${item.note.trim()}`);
     }
     if (item.artworkUrls?.length) {
-      extras.push(`   🖼️ Referências: ${item.artworkUrls.join(" ")}`);
+      extras.push(`   📸 Referências: ${item.artworkUrls.join(" ")}`);
     }
     return extras.length ? `${base}\n${extras.join("\n")}` : base;
   });
@@ -62,7 +62,7 @@ export function generateWhatsAppLink(
     0
   );
 
-  const header = orderNumber ? `🧾 *Pedido #${orderNumber}:*` : `📦 *Pedido:*`;
+  const header = orderNumber ? `📦 *Pedido #${orderNumber}:*` : `📦 *Pedido:*`;
   const text = `${siteConfig.whatsapp.message}\n\n${header}\n${lines.join("\n")}\n\n💰 *Total: R$ ${total.toFixed(2)}*`;
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;

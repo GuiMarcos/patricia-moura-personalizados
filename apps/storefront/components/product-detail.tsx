@@ -2,7 +2,8 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { ShoppingCart, Upload, X, Minus, Plus } from "lucide-react";
+import Link from "next/link";
+import { ShoppingCart, Upload, X, Minus, Plus, ArrowLeft } from "lucide-react";
 import type { Product, CustomizationImage } from "@patricia-moura-personalizados/types";
 import { useCart } from "./cart-provider";
 import { siteConfig } from "@patricia-moura-personalizados/config";
@@ -86,7 +87,14 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid gap-8 lg:grid-cols-2">
+      <Link
+        href="/produtos"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-600 hover:text-primary-700"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Voltar para produtos
+      </Link>
+      <div className="mt-6 grid gap-8 lg:grid-cols-2">
         <div className="space-y-4">
           {product.images[0] && (
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-primary-50">
