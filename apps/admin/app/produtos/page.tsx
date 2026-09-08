@@ -7,6 +7,8 @@ import { DeleteButton } from "./delete-button";
 import { LogoutButton } from "../logout-button";
 import { ListRefresh } from "@/components/list-refresh";
 
+export const dynamic = "force-dynamic";
+
 async function fetchProducts(): Promise<AdminProduct[]> {
   try {
     const client = getWriteClient();

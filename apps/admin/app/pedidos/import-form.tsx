@@ -178,7 +178,7 @@ export function ImportForm({ products }: { products: ImportProduct[] }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={8}
-          placeholder={"Ex:\n2x Caneca Básica Personalizável - R$ 120.00\n   ✏️ Personalização: Nome \"Ana\"\n1x Chaveiro Redondo Personalizado - R$ 25.00\n💰 Total: R$ 145.00"}
+          placeholder={"Ex:\n2x Caneca Básica Personalizável - R$ 120.00\n   Personalização: Nome \"Ana\"\n1x Chaveiro Redondo Personalizado - R$ 25.00\nTotal: R$ 145.00"}
           className={`${inputCls} resize-y font-mono text-xs`}
         />
         <button
