@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { ShoppingCart, Upload, X } from "lucide-react";
+import { ShoppingCart, Upload, X, Minus, Plus } from "lucide-react";
 import type { Product, CustomizationImage } from "@patricia-moura-personalizados/types";
 import { useCart } from "./cart-provider";
 import { siteConfig } from "@patricia-moura-personalizados/config";
@@ -21,6 +21,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
   const [note, setNote] = useState("");
   const [images, setImages] = useState<CustomizationImage[]>([]);
   const [formError, setFormError] = useState<string | null>(null);
+  const [quantity, setQuantity] = useState(1);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const selectedVariant =
@@ -65,12 +66,14 @@ export function ProductDetail({ product }: ProductDetailProps) {
     });
   };
 
+  const clampQty = (q: number) => Math.min(99, Math.max(1, Math.floor(q) || 1));
+
   const handleAdd = () => {
     if (product.customizable && (note.trim() || images.length > 0)) {
       // As previewUrls passam a pertencer ao carrinho (ele libera ao remover)
-      addItem(product, { note: note.trim(), images }, selectedVariant);
+      addItem(product, { note: note.trim(), images }, selectedVariant, quantity);
     } else {
-      addItem(product, undefined, selectedVariant);
+      addItem(product, undefined, selectedVariant, quantity);
     }
     setNote("");
     setImages([]);
@@ -238,9 +241,38 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </div>
           )}
 
-          <div className="mt-6">
+          <div className="mt-6 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3 rounded-full border border-primary-200 bg-white px-2 py-1.5">
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => clampQty(q - 1))}
+                disabled={quantity <= 1}
+                aria-label="Diminuir quantidade"
+                className="rounded-full p-1.5 text-cocoa hover:bg-primary-50 disabled:opacity-30"
+              >
+                <Minus className="h-4 w-4" />
+              </button>
+              <input
+                type="number"
+                min={1}
+                max={99}
+                value={quantity}
+                onChange={(e) => setQuantity(clampQty(Number(e.target.value)))}
+                aria-label="Quantidade"
+                className="w-10 bg-transparent text-center text-sm font-semibold text-cocoa focus:outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => clampQty(q + 1))}
+                disabled={quantity >= 99}
+                aria-label="Aumentar quantidade"
+                className="rounded-full p-1.5 text-cocoa hover:bg-primary-50 disabled:opacity-30"
+              >
+                <Plus className="h-4 w-4" />
+              </button>
+            </div>
             <p className="text-3xl font-bold text-primary-600">
-              R$ {displayPrice.toFixed(2)}
+              R$ {(displayPrice * quantity).toFixed(2)}
             </p>
           </div>
 

@@ -6,7 +6,7 @@ import { unitPrice } from "@patricia-moura-personalizados/types";
 
 interface CartContextType {
   items: CartItem[];
-  addItem: (product: Product, customization?: Customization, variant?: ProductVariant) => void;
+  addItem: (product: Product, customization?: Customization, variant?: ProductVariant, quantity?: number) => void;
   removeItem: (itemId: string) => void;
   updateQuantity: (itemId: string, quantity: number) => void;
   clearCart: () => void;
@@ -32,12 +32,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const hasCustomization = (c?: Customization) =>
     !!c && (!!c.note.trim() || c.images.length > 0);
 
-  const addItem = useCallback((product: Product, customization?: Customization, variant?: ProductVariant) => {
+  const addItem = useCallback((product: Product, customization?: Customization, variant?: ProductVariant, quantity?: number) => {
+    const qty = Math.min(99, Math.max(1, Math.floor(quantity ?? 1)));
     // Linha personalizada nunca agrupa: cada descrição/anexo é um pedido distinto
     if (hasCustomization(customization)) {
       setItems((current) => [
         ...current,
-        { id: newLineId(), product, quantity: 1, customization, variant },
+        { id: newLineId(), product, quantity: qty, customization, variant },
       ]);
       setIsOpen(true);
       return;
@@ -49,11 +50,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (existing) {
         return current.map((item) =>
           item.id === existing.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: Math.min(99, item.quantity + qty) }
             : item
         );
       }
-      return [...current, { id: lineId, product, quantity: 1, variant }];
+      return [...current, { id: lineId, product, quantity: qty, variant }];
     });
     setIsOpen(true);
   }, []);
