@@ -46,7 +46,7 @@ function LoginForm() {
           Acesso restrito
         </h1>
         <p className="mt-1 text-center text-sm text-gray-500">
-          Painel da Patrícia Moura Personalizados
+          Painel da Patricia Moura Personalizados
         </p>
 
         {error && (

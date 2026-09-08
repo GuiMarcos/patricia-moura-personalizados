@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Admin - Patrícia Moura Personalizados",
+  title: "Admin - Patricia Moura Personalizados",
   description: "Painel administrativo",
 };
 

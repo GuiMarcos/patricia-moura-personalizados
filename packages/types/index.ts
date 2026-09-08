@@ -57,6 +57,6 @@ export interface Order {
   _id: string;
   items: CartItem[];
   total: number;
-  status: "pendente" | "confirmado" | "enviado" | "entregue";
+  status: "pendente" | "confirmado" | "enviado" | "entregue" | "cancelado";
   createdAt: string;
 }

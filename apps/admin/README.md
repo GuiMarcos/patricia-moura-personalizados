@@ -14,6 +14,7 @@ Acessa http://localhost:3001
 
 - **Dashboard** com total de pedidos, pendentes, receita total/mês e últimos pedidos
 - **Lista de pedidos** com filtro por status, busca, ordenação e alteração de status (pendente → confirmado → enviado → entregue, ou cancelado)
+- **Criar/editar pedidos** manuais com cliente (nome, telefone, endereço), itens do catálogo e desconto (fixo R$ ou %)
 - **Exportar CSV** dos pedidos filtrados (compatível com Excel PT-BR)
 - **Produtos**: cadastrar, editar e excluir com upload de imagens
 - **Link pro Sanity Studio** pra gerenciar conteúdo

@@ -19,6 +19,11 @@ export interface Order {
   total: number;
   status: string;
   customerNote?: string;
+  customerName?: string;
+  customerPhone?: string;
+  customerAddress?: string;
+  discountType?: string;
+  discountValue?: number;
   _createdAt: string;
 }
 
@@ -125,10 +130,14 @@ export function OrdersClient({ orders }: { orders: Order[] }) {
                 <div>
                   <p className="text-sm text-gray-500">
                     Pedido #{order._id.slice(-8).toUpperCase()}
+                    {order.customerName && (
+                      <span className="font-medium text-gray-700"> · {order.customerName}</span>
+                    )}
                   </p>
                   <p className="text-sm text-gray-500">
                     {new Date(order._createdAt).toLocaleDateString("pt-BR")} ·{" "}
                     {timeAgo(order._createdAt)}
+                    {order.customerPhone && ` · ${order.customerPhone}`}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -140,6 +149,14 @@ export function OrdersClient({ orders }: { orders: Order[] }) {
                     {order.status}
                   </span>
                   <StatusSelect id={order._id} status={order.status} />
+                  {order.status !== "cancelado" && order.status !== "entregue" && (
+                    <a
+                      href={`/pedidos/${order._id}/editar`}
+                      className="rounded-full border px-3 py-1 text-xs font-semibold text-primary-700 hover:bg-primary-50"
+                    >
+                      Editar
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -178,16 +195,39 @@ export function OrdersClient({ orders }: { orders: Order[] }) {
                 ))}
               </div>
 
-              <div className="mt-4 border-t pt-4 flex justify-between font-semibold">
-                <span>Total</span>
-                <span className="text-primary-600">R$ {order.total.toFixed(2)}</span>
+              <div className="mt-4 border-t pt-4 font-semibold">
+                {order.discountType && order.discountType !== "none" && (order.discountValue || 0) > 0 && (
+                  <div className="flex justify-between text-sm font-normal text-gray-600">
+                    <span>
+                      Desconto ({order.discountType === "percent" ? `${order.discountValue}%` : `R$ ${Number(order.discountValue).toFixed(2)}`})
+                    </span>
+                    <span>
+                      − R$ {(
+                        (order.discountType === "percent"
+                          ? (order.items.reduce((s, it) => s + it.price * it.quantity, 0) * Number(order.discountValue)) / 100
+                          : Number(order.discountValue))
+                      ).toFixed(2)}
+                    </span>
+                  </div>
+                )}
+                <div className="flex justify-between">
+                  <span>Total</span>
+                  <span className="text-primary-600">R$ {order.total.toFixed(2)}</span>
+                </div>
               </div>
 
-              {order.customerNote && (
+              {(order.customerAddress || order.customerNote) && (
                 <div className="mt-4 rounded-lg bg-primary-50 p-3">
-                  <p className="text-sm text-gray-600">
-                    <strong>Observação:</strong> {order.customerNote}
-                  </p>
+                  {order.customerAddress && (
+                    <p className="text-sm text-gray-600">
+                      <strong>Endereço:</strong> {order.customerAddress}
+                    </p>
+                  )}
+                  {order.customerNote && (
+                    <p className="mt-1 text-sm text-gray-600">
+                      <strong>Observação:</strong> {order.customerNote}
+                    </p>
+                  )}
                 </div>
               )}
             </div>

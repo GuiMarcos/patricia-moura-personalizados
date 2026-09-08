@@ -24,27 +24,40 @@ export function ExportButton({ orders }: { orders: Order[] }) {
     const header = [
       "Pedido",
       "Data",
+      "Cliente",
+      "Telefone",
       "Produto",
       "Variante",
       "Qtd",
       "Preço unitário (R$)",
       "Subtotal (R$)",
+      "Desconto (R$)",
       "Status",
       "Total do pedido (R$)",
     ];
     const rows: string[] = [header.map(csvCell).join(";")];
     for (const order of orders) {
       const number = order._id.slice(-8).toUpperCase();
+      const subtotal = order.items.reduce((s, it) => s + it.price * it.quantity, 0);
+      const discount =
+        order.discountType === "percent"
+          ? (subtotal * Number(order.discountValue || 0)) / 100
+          : order.discountType === "fixed"
+            ? Math.min(Number(order.discountValue || 0), subtotal)
+            : 0;
       for (const item of order.items) {
         rows.push(
           [
             number,
             formatDate(order._createdAt),
+            order.customerName || "",
+            order.customerPhone || "",
             item.product?.name || "Produto removido",
             item.variantName || "",
             item.quantity,
             formatBRL(item.price),
             formatBRL(item.price * item.quantity),
+            formatBRL(Math.round(discount * 100) / 100),
             order.status,
             formatBRL(order.total),
           ]
