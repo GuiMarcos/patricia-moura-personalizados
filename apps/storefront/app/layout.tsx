@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { CartProvider } from "@/components/cart-provider";
 
 export const metadata: Metadata = {
-  title: "Patrícia Moura Personalizados - Canecas, Camisetas e mais",
+  title: "Patricia Moura Personalizados - Canecas, Camisetas e mais",
   description: "Produtos personalizados com seu nome, foto ou frase. Canecas, camisetas, chaveiros, garrafas e toalhas. Faça seu pedido pelo WhatsApp!",
 };
 

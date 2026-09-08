@@ -1,4 +1,4 @@
-# Patrícia Moura Personalizados
+# Patricia Moura Personalizados
 
 Catálogo online de produtos personalizados com checkout via WhatsApp.
 
@@ -24,7 +24,7 @@ patricia-moura-personalizados/
 ## Tecnologias
 
 | Camada | Tecnologia |
-|--------|------------|
+| -------- | ------------ |
 | Frontend | Next.js 15 + React 19 |
 | Estilo | Tailwind CSS 3 |
 | CMS | Sanity v3 |
@@ -45,8 +45,8 @@ pnpm install
 pnpm dev
 ```
 
-- Site público: http://localhost:3002
-- Admin: http://localhost:3001
+- Site público: <http://localhost:3002>
+- Admin: <http://localhost:3001>
 
 ### Sanity Studio
 
@@ -54,12 +54,12 @@ pnpm dev
 pnpm studio
 ```
 
-Acessa http://localhost:3333 pra gerenciar produtos.
+Acessa <http://localhost:3333> pra gerenciar produtos.
 
 ## Produtos Cadastrados
 
 | Produto | Categoria | Preço |
-|---------|-----------|-------|
+| --------- | ----------- | ------- |
 | Caneca Básica Branca Personalizável | Caneca | R$ 38,00 |
 | Caneca Básica Colorida Personalizável | Caneca | R$ 40,00 |
 | Caneca Mágica Personalizada | Caneca | R$ 48,00 |
@@ -111,7 +111,7 @@ apontando para o mesmo repositório mas com **Root Directory** diferente
    - `NEXT_PUBLIC_SANITY_PROJECT_ID` = seu project id
    - `NEXT_PUBLIC_SANITY_DATASET` = production
    - `NEXT_PUBLIC_SITE_URL` = URL do deploy daquele projeto
-     (loja: https://patricia-moura-personalizados-store.vercel.app)
+     (loja: <https://patricia-moura-personalizados-store.vercel.app>)
    - `NEXT_PUBLIC_WHATSAPP_NUMBER` = 5541996981425
    - `NEXT_PUBLIC_INSTAGRAM_URL` = URL do Instagram
    - `SANITY_TOKEN` = token com permissão de escrita (upload de imagens + admin)
@@ -123,7 +123,7 @@ O admin exige login com a `ADMIN_PASSWORD` em todas as páginas e APIs.
 ## Comandos Úteis
 
 | Comando | Descrição |
-|---------|-----------|
+| --------- | ----------- |
 | `pnpm dev` | Rodar site + admin (com `.env.local`) |
 | `pnpm build` | Build de produção (com `.env.prod`) |
 | `pnpm studio` | Abrir Sanity Studio |

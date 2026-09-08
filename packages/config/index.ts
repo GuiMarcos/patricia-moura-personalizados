@@ -14,7 +14,7 @@ const instagramUrl =
   "https://instagram.com/patriciamourapersonalizados";
 
 export const siteConfig = {
-  name: "Patrícia Moura Personalizados",
+  name: "Patricia Moura Personalizados",
   description: "Canecas, camisetas, chaveiros, garrafas e toalhas personalizados. Faça seu pedido pelo WhatsApp!",
   whatsapp: {
     number: whatsappNumber,

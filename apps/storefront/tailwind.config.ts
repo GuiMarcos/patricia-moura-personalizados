@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Identidade Patrícia Moura Personalizados.
+ * Identidade Patricia Moura Personalizados.
  * Rosa principal #C9787D · fundo creme #FFFCFA · texto cacau #5F5A58.
  * Sálvia = secundária · azul pastel + pêssego = pequenos detalhes.
  */

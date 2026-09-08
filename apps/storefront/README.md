@@ -8,7 +8,7 @@ O site que os clientes veem. Catálogo de produtos com carrinho e checkout via W
 pnpm dev
 ```
 
-Acessa http://localhost:3002
+Acessa <http://localhost:3002>
 
 ## Funcionalidades
 
@@ -68,7 +68,7 @@ NEXT_PUBLIC_INSTAGRAM_URL=https://instagram.com/patriciamourapersonalizados
 Em `packages/config/index.ts`:
 
 ```ts
-name: "Patrícia Moura Personalizados",
+name: "Patricia Moura Personalizados",
 ```
 
 ## Deploy
@@ -76,6 +76,7 @@ name: "Patrícia Moura Personalizados",
 O Vercel faz deploy automático a cada push no GitHub.
 
 Env vars necessárias no Vercel (mesmas chaves do `.env.prod` da raiz):
+
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` = seu project id
 - `NEXT_PUBLIC_SANITY_DATASET` = production
 - `NEXT_PUBLIC_SITE_URL` = URL do deploy
