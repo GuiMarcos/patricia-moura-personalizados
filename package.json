@@ -11,7 +11,9 @@
     "seed": "node scripts/with-env.js --dir sanity -- npx tsx seed.ts",
     "seed:fresh": "node scripts/with-env.js --dir sanity -- npx tsx seed.ts --fresh",
     "seed:prod": "node scripts/with-env.js --env prod --dir sanity -- npx tsx seed.ts",
-    "seed:prod:fresh": "node scripts/with-env.js --env prod --dir sanity -- npx tsx seed.ts --fresh"
+    "seed:prod:fresh": "node scripts/with-env.js --env prod --dir sanity -- npx tsx seed.ts --fresh",
+    "telegram:webhook": "node scripts/with-env.js --env prod -- node scripts/telegram-set-webhook.js",
+    "telegram:webhook:local": "node scripts/with-env.js -- node scripts/telegram-set-webhook.js"
   },
   "devDependencies": {
     "dotenv": "^16.4.0",

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@patricia-moura-personalizados/parser": "workspace:*",
     "@patricia-moura-personalizados/sanity": "workspace:*",
     "@patricia-moura-personalizados/types": "workspace:*",
     "lucide-react": "^0.474.0",
