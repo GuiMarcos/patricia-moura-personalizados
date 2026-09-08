@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoutButton } from "./logout-button";
+import { ListRefresh } from "@/components/list-refresh";
 import { getOrderStats } from "./lib/stats";
 import { fetchOrders } from "@patricia-moura-personalizados/sanity";
 
@@ -52,6 +53,7 @@ export default async function AdminPage() {
 
   return (
     <div className="min-h-screen bg-cream">
+      <ListRefresh />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
           <h1 className="text-3xl font-bold">Painel Administrativo</h1>

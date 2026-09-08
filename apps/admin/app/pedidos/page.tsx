@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { fetchOrders } from "@patricia-moura-personalizados/sanity";
 import { OrdersClient, type Order } from "./orders-client";
+import { ListRefresh } from "@/components/list-refresh";
+import { LogoutButton } from "../logout-button";
 
 export const dynamic = "force-dynamic";
 
@@ -14,10 +16,18 @@ export default async function OrdersPage() {
 
   return (
     <div className="min-h-screen bg-cream">
+      <ListRefresh />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
-          <h1 className="text-3xl font-bold">Pedidos</h1>
+          <div>
+            <Link href="/" className="text-sm text-primary-600 hover:underline">
+              ← Painel
+            </Link>
+            <h1 className="mt-1 text-3xl font-bold">Pedidos</h1>
+            <p className="mt-1 text-gray-500">{orders.length} pedido(s)</p>
+          </div>
           <div className="flex items-center gap-3">
+            <LogoutButton />
             <Link
               href="/pedidos/importar"
               className="rounded-lg border border-primary-300 px-4 py-2 text-sm font-semibold text-primary-700 hover:bg-primary-50 transition"

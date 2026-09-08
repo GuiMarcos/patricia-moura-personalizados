@@ -5,6 +5,7 @@ import { ADMIN_LIST_QUERY } from "@/app/api/products/validate";
 import { categoryLabel, type AdminProduct } from "@/app/lib/products";
 import { DeleteButton } from "./delete-button";
 import { LogoutButton } from "../logout-button";
+import { ListRefresh } from "@/components/list-refresh";
 
 async function fetchProducts(): Promise<AdminProduct[]> {
   try {
@@ -20,6 +21,7 @@ export default async function ProductsPage() {
 
   return (
     <div className="min-h-screen bg-cream">
+      <ListRefresh />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
           <div>
